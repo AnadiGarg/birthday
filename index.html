@@ -6,66 +6,72 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap');
+
 *{margin:0;padding:0;box-sizing:border-box}
+
 body{
-  font-family: 'Poppins', Arial, sans-serif;
+  font-family:'Poppins',sans-serif;
   overflow:hidden;
-  background: linear-gradient(120deg,#fbd3e9,#cdb4db,#a18cd1);
-  animation:bg 12s ease infinite;
-  background-size:400% 400%;
+  background: radial-gradient(circle at top,#fbd3e9,#cdb4db,#a18cd1);
 }
-@keyframes bg{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+
+/* animated backdrop */
+.bg{
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,255,255,0.35),transparent 40%),
+    radial-gradient(circle at 80% 30%,rgba(255,255,255,0.25),transparent 45%),
+    radial-gradient(circle at 50% 80%,rgba(255,255,255,0.3),transparent 50%);
+  animation: floatbg 14s ease-in-out infinite alternate;
+  z-index:-1;
+}
+@keyframes floatbg{
+  from{transform:scale(1)}
+  to{transform:scale(1.08)}
 }
 
 .section{
   display:none;
   height:100vh;
-  width:100vw;
   padding:24px;
-  text-align:center;
+  display:flex;
+  flex-direction:column;
   justify-content:center;
   align-items:center;
-  flex-direction:column;
+  text-align:center;
 }
 .section.active{display:flex}
 
-h1{font-size:2.2rem;margin-bottom:12px}
-p{font-size:1.1rem;max-width:700px;margin-bottom:18px}
+h1{
+  font-family:'Pacifico',cursive;
+  font-size:2.4rem;
+  margin-bottom:10px;
+}
+p{
+  font-size:1.05rem;
+  max-width:760px;
+  line-height:1.6;
+}
 
 button{
-  padding:14px 28px;
-  border-radius:30px;
+  padding:12px 26px;
   border:none;
+  border-radius:30px;
+  font-size:1rem;
+  cursor:pointer;
   background:#000;
   color:#fff;
-  font-size:1rem;
-  margin:10px;
-  cursor:pointer;
-}
-
-.fake{background:#444;opacity:0.6}
-
-.float{
   position:absolute;
-  width:220px;
-  height:220px;
-  background:rgba(255,255,255,0.3);
-  border-radius:50%;
-  filter:blur(70px);
-  animation:move 10s infinite alternate ease-in-out;
-}
-@keyframes move{
-  from{transform:translateY(0)}
-  to{transform:translateY(-120px)}
 }
 
+/* hearts – very subtle */
 .heart{
   position:fixed;
-  font-size:20px;
-  animation:fall 6s linear infinite;
+  font-size:14px;
+  opacity:0.5;
+  animation:fall 9s linear infinite;
 }
 @keyframes fall{
   0%{top:-10%}
@@ -80,58 +86,82 @@ button{
 
 <body>
 
-<div class="float" style="top:10%;left:10%"></div>
-<div class="float" style="top:70%;left:70%"></div>
+<div class="bg"></div>
 
 <!-- PAGE 1 -->
 <div class="section active" id="p1">
 <h1>Hey Mihika 👀</h1>
-<p>Something special is waiting for you</p>
-<button class="fake">Click here</button>
-<button class="fake">Try this</button>
-<button onclick="go('p2')">This one?</button>
+<p>Something is waiting for you.<br>Choose carefully 😌</p>
+
+<button style="top:15%;left:10%">Click here</button>
+<button style="top:70%;right:12%">Try this</button>
+<button style="bottom:18%;left:40%" onclick="go('p2')">This?</button>
 </div>
 
 <!-- PAGE 2 -->
 <div class="section" id="p2">
 <h1>Nope 😄</h1>
-<p>You really thought it would be that easy?</p>
-<button class="fake">Here?</button>
-<button onclick="go('p3')">Okay okay</button>
+<p>That was too easy.</p>
+
+<button style="top:20%;right:15%">Here?</button>
+<button style="bottom:20%;left:15%" onclick="go('p3')">Okay okay</button>
 </div>
 
 <!-- PAGE 3 -->
 <div class="section" id="p3">
-<h1>Still trying 😂</h1>
-<p>Now you’re getting closer</p>
-<button class="fake">Wrong again</button>
-<button onclick="go('p4')">Feels right</button>
+<h1>You’re persistent 😂</h1>
+<p>Now you’re closer.</p>
+
+<button style="top:65%;right:20%">Wrong again</button>
+<button style="top:30%;left:20%" onclick="go('p4')">Feels right</button>
 </div>
 
 <!-- PAGE 4 -->
 <div class="section" id="p4">
-<h1>Almost there 😌</h1>
-<p>One last step</p>
-<button onclick="go('p5')">Open it</button>
+<h1>Almost 😌</h1>
+<p>One last step.</p>
+
+<button style="bottom:25%;right:35%" onclick="go('p5')">Open</button>
 </div>
 
-<!-- FINAL PAGE -->
+<!-- FINAL LETTER -->
 <div class="section scroll" id="p5">
 <h1>💌 For Mihika</h1>
+
 <p>
-This letter might be long — please read it only if you have time.<br><br>
+This letter might get a little long, so please read it only if you have the time.
+It’s been years since I truly expressed something like this, so I wanted to say it honestly.<br><br>
 
-People don’t admire or express much these days.
-So this is just my small attempt to make you feel special.<br><br>
+Nowadays, people don’t really express what they feel about each other. Everyone is busy with studies,
+work, and life. So this is just my small attempt to make you feel special — even if it’s only for a moment.<br><br>
 
-You are beautiful, kind, mature, and perfect in who you are.
-But your inner and mental beauty is far greater — that’s rare.<br><br>
+Once you healed me, I realised something very clearly — you are truly amazing.
+You are beautiful, kind, mature, and I’ve honestly never met a person like you at this age.
+You are perfect in everything that you are.<br><br>
 
-Even if we don’t talk much,
-you hold a big place in my mind
-and a small, honest place in my heart.<br><br>
+But what I admire even more is your inner and mental beauty.
+It is far greater than your outer beauty.
+The way you think, understand life, and handle situations makes you very special from within.<br><br>
 
-Please take this as a very big joke —
+I admire the way you handle life. A lot has happened in your life — things much deeper than anything I’ve experienced —
+yet you came out of it with clarity and strength. That says a lot about who you are.
+You are a great personality, even if many people don’t fully understand you.<br><br>
+
+You have played a very big role in shaping the way I think, the way I see life, and the way I do things.
+Wherever I am today, mentally and physically, you hold a big credit for that.<br><br>
+
+I also know that I probably don’t hold even 0.1% of a place in your life.
+I’m aware of that. Still, you are very special to me, and that truth won’t change.<br><br>
+
+You are the greatest poet I’ve ever seen.
+The depth and honesty in your words reaches places that are hard to explain.
+No matter how much I write about you, it will always feel less.
+Like Alexander the Great — you are the great Mihika.<br><br>
+
+We don’t talk much — sometimes just a reel and a reply —
+yet you hold a big place in my mind and a small, honest place in my heart.<br><br>
+
+Please take this as a very, very big joke —
 I once thought about travelling with you 🙂<br><br>
 
 <b>Happy Birthday, Mihika 🎂</b><br>
@@ -145,12 +175,13 @@ function go(id){
   document.getElementById(id).classList.add('active');
 }
 
-for(let i=0;i<25;i++){
+// subtle hearts
+for(let i=0;i<12;i++){
   let h=document.createElement("div");
   h.className="heart";
   h.innerHTML="💜";
   h.style.left=Math.random()*100+"vw";
-  h.style.animationDuration=(Math.random()*3+4)+"s";
+  h.style.animationDuration=(Math.random()*4+6)+"s";
   document.body.appendChild(h);
 }
 </script>
