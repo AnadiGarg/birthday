@@ -2,32 +2,24 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For Mihika 💜</title>
+<title>For Mihika 🤍</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
 *{margin:0;padding:0;box-sizing:border-box}
 
 html,body{
   width:100%;
   height:100%;
-  overflow:hidden; /* IMPORTANT: disable scroll globally */
-  font-family:'Poppins',sans-serif;
+  overflow:hidden;
+  font-family:'Inter',sans-serif;
+  background:#faf9f7;
+  color:#222;
 }
 
-/* ---------- BACKDROP ---------- */
-body{
-  background:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.35), transparent 40%),
-    radial-gradient(circle at 80% 30%, rgba(255,255,255,0.25), transparent 45%),
-    radial-gradient(circle at 50% 80%, rgba(255,255,255,0.3), transparent 50%),
-    linear-gradient(120deg,#fbd3e9,#cdb4db,#a18cd1);
-  background-size:cover;
-}
-
-/* ---------- SECTIONS ---------- */
+/* --------- layout --------- */
 .section{
   position:fixed;
   inset:0;
@@ -37,150 +29,162 @@ body{
   text-align:center;
   padding:24px;
 }
-
 .section.active{
   display:flex;
   flex-direction:column;
 }
 
+/* --------- text --------- */
 h1{
-  font-family:'Pacifico',cursive;
-  font-size:2.4rem;
+  font-size:2.1rem;
+  font-weight:400;
   margin-bottom:14px;
 }
-
 p{
   font-size:1.05rem;
   line-height:1.7;
-  max-width:780px;
+  max-width:760px;
 }
 
-/* ---------- BUTTONS ---------- */
+/* --------- buttons --------- */
 button{
   position:absolute;
-  padding:12px 26px;
-  border:none;
-  border-radius:30px;
-  font-size:1rem;
-  background:#000;
-  color:#fff;
+  padding:12px 24px;
+  border-radius:999px;
+  border:1px solid #222;
+  background:#fff;
+  font-size:0.95rem;
   cursor:pointer;
 }
-
 .fake{
-  opacity:0.7;
+  opacity:0.6;
 }
 
-/* ---------- FINAL LETTER ---------- */
+/* --------- final letter --------- */
 #final{
-  overflow-y:auto;       /* scroll ONLY here */
+  overflow-y:auto;
   align-items:flex-start;
 }
-
 #final h1{
-  margin-top:20px;
+  margin-top:10px;
 }
-
 #final p{
   margin:20px auto 60px;
+  text-align:left;
 }
 
-/* ---------- SUBTLE HEARTS ---------- */
-.heart{
+/* --------- subtle background --------- */
+.bg{
   position:fixed;
-  font-size:14px;
-  opacity:0.45;
-  animation:fall 10s linear infinite;
-  pointer-events:none;
-}
-
-@keyframes fall{
-  0%{top:-10%}
-  100%{top:110%}
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0,0,0,0.04), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(0,0,0,0.03), transparent 45%);
+  z-index:-1;
 }
 </style>
 </head>
 
 <body>
 
+<div class="bg"></div>
+
 <!-- PAGE 1 -->
 <div class="section active" id="p1">
-  <h1>Hey Mihika 👀</h1>
-  <p>Choose wisely 😌</p>
+  <h1>Hey Mihika</h1>
+  <p>Choose carefully 🙂</p>
 
-  <button class="fake" style="top:18%;left:12%">Click here</button>
-  <button class="fake" style="bottom:22%;right:14%">Try this</button>
-  <button onclick="go('p2')" style="top:55%;left:42%">This?</button>
+  <button class="fake" style="top:18%;left:12%">click here</button>
+  <button class="fake" style="bottom:22%;right:14%">try this</button>
+  <button onclick="go('p2')" style="top:55%;left:42%">this?</button>
 </div>
 
 <!-- PAGE 2 -->
 <div class="section" id="p2">
   <h1>Nope 😄</h1>
-  <p>Too easy.</p>
+  <p>Not that easy.</p>
 
-  <button class="fake" style="top:25%;right:20%">Here?</button>
-  <button onclick="go('p3')" style="bottom:28%;left:18%">Okay okay</button>
+  <button class="fake" style="top:25%;right:18%">here?</button>
+  <button onclick="go('p3')" style="bottom:28%;left:18%">okay okay</button>
 </div>
 
 <!-- PAGE 3 -->
 <div class="section" id="p3">
-  <h1>You’re persistent 😂</h1>
-  <p>Almost there.</p>
+  <h1>Almost 🙂</h1>
+  <p>One last step.</p>
 
-  <button class="fake" style="top:65%;right:22%">Wrong again</button>
-  <button onclick="go('final')" style="top:32%;left:22%">Feels right</button>
+  <button onclick="go('final')" style="top:45%;left:40%">open</button>
 </div>
 
 <!-- FINAL LETTER -->
 <div class="section" id="final">
-<h1>💌 For Mihika</h1>
+<h1>Mihika,</h1>
 
 <p>
-This letter might get a little long, so please read it only if you have the time.
-It’s been years since I truly expressed something like this, so I wanted to say it honestly.<br><br>
+This letter might get a little long, so please read it only if you have the time 🙃<br>
+It’s been years since I expressed something like this, so I wanted to say it honestly.<br><br>
 
-Nowadays, people don’t really express what they feel about each other.
-Everyone is busy with studies, work, and life.
-So this is just my small attempt to make you feel special — even if it’s only for a moment.<br><br>
+Nowadays, we rarely tell people what they mean to us. Everyone is busy with studies, work, and life.
+So this is just my small attempt to make you feel special — even if it’s only for a moment ☺️✨<br><br>
 
-Once you healed me, I realised something very clearly — you are truly amazing.
-You are beautiful, kind, mature, and I’ve honestly never met a person like you at this age.
-You are perfect in everything that you are.<br><br>
+Once you healed me, I realised how amazing you truly are.
+You are beautiful, kind, mature, and honestly, I’ve never met someone like you at this age.
+You are perfect in everything that you are 🙇🏻‍♂️🌼<br><br>
 
-But what I admire even more is your inner and mental beauty.
-It is far greater than your outer beauty.
-The way you think, understand life, and handle situations makes you very special from within.<br><br>
+Your inner and mental beauty is far greater than your outer beauty.
+The way you think, understand life, and handle things makes you very special from within 🫶🏻🤍<br><br>
 
-I admire the way you handle life.
-A lot has happened in your life — things much deeper than anything I’ve experienced —
+I admire the way you deal with life.
+A lot has happened in your life — things much deeper than what I’ve experienced —
 yet you came out of it with clarity and strength.
 That says a lot about who you are.
-You are a great personality, even if many people don’t fully understand you.<br><br>
+You are a great personality, even if many people don’t fully understand you 🥲✨<br><br>
+
+I want you to know that I still feel the same admiration and respect for you that I did 2.5 years ago.
+This is not a concern, and you don’t need to worry about it at all.
+Just leave it with me 🤓🌱<br><br>
 
 You have played a very big role in shaping the way I think,
 the way I see life, and the way I do things.
 Wherever I am today, mentally and physically,
-you hold a very big credit for that.<br><br>
+you hold a big credit for that.
+I’ve learned things from you that nobody else could ever teach me 😌📖<br><br>
 
 I also know that I probably don’t hold even 0.1% of a place in your life.
 I’m aware of that.
 Still, you are very special to me,
-and that truth won’t change.<br><br>
+and that truth won’t change 🧐💭<br><br>
+
+I loved talking to you, and I still feel nervous sometimes —
+not out of fear, but because I see you as someone very intelligent,
+kind, creative, and above me in many ways 😎✨<br><br>
 
 You are the greatest poet I’ve ever seen.
 The depth and honesty in your words reaches places that are hard to explain.
 No matter how much I write about you, it will always feel less.
-Like Alexander the Great — you are the great Mihika.<br><br>
+Like Alexander the Great — you are the great Mihika 😜📜<br><br>
 
-We don’t talk much —
-sometimes just a reel and a reply —
-yet you hold a big place in my mind
-and a small, honest place in my heart.<br><br>
+I know we don’t talk much.
+Sometimes it’s just a reel and a reply.
+Still, you hold a big place in my mind
+and a small, honest place in my heart 😝💗<br><br>
 
-Please take this as a very, very big joke —
-I once thought about travelling with you 🙂<br><br>
+I know you’re preparing for JEE.
+I truly believe you will do great in life —
+not just in exams, but in whatever you choose.
+You are far bigger than any result 😊🌟<br><br>
 
-<b>Happy Birthday, Mihika 🎂</b><br>
+One more thing — please take this as a very, very, very big joke —
+I once thought about travelling with you 😝✈️
+Nothing serious, nothing deep, just a thought.<br><br>
+
+If you receive any gift today, please don’t say no.
+I’ve never really had the chance to do something for you.
+It might not mean much to you,
+but it means a lot to me 🎁🤍<br><br>
+
+Wishing you a very special and happiest birthday 🎂✨<br><br>
+
 — someone who truly admires you
 </p>
 </div>
@@ -189,16 +193,6 @@ I once thought about travelling with you 🙂<br><br>
 function go(id){
   document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-}
-
-// subtle hearts
-for(let i=0;i<10;i++){
-  let h=document.createElement("div");
-  h.className="heart";
-  h.innerHTML="💜";
-  h.style.left=Math.random()*100+"vw";
-  h.style.animationDuration=(Math.random()*4+6)+"s";
-  document.body.appendChild(h);
 }
 </script>
 
